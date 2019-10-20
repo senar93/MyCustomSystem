@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using MyCustomSystem.Events;
-using MyCustomSystem.Events.EntityBehaviour;
+using MyCustomSystem.EntityBehaviour.Events;
 
 namespace MyCustomSystem.EntityBehaviour.GenericBehaviour
 {
 	[RequireComponent(typeof(Collider))]
-	public class ColliderBehaviour : AbsCustomBehaviour
+	public class ColliderBehaviour : AbsGenericBehaviour
 	{
 		[Space][SerializeField, ReadOnly] Collider _thisCollider;
 

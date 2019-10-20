@@ -17,7 +17,8 @@ namespace MyCustomSystem.Data
 				{
 					T[] tmp = Resources.LoadAll<T>("");
 					if (tmp.Length > 1)
-						Debug.LogWarning("Sono state trovate più istanze della classe " + typeof(T) + "; verrà caricata solo la prima");
+						Debug.LogWarning("Sono state trovate più istanze della classe " + typeof(T) + 
+										 "; verrà caricato solo il file " + tmp.First().name);
 					_instance = tmp.First();
 				}
 				if (!_instance)

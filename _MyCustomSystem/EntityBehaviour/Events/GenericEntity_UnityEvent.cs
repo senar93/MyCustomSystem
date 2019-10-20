@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MyCustomSystem.Events.EntityBehaviour
+namespace MyCustomSystem.EntityBehaviour.Events
 {
 	[System.Serializable]
 	public class GenericEntity_UnityEvent : UnityEvent<AbsGenericEntity> { }

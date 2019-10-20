@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MyCustomSystem.EntityBehaviour.GenericBehaviour
 {
-	public class DebugCallerBehaviour : AbsCustomBehaviour
+	public class DebugCallerBehaviour : AbsGenericBehaviour
 	{
 		public void DebugLogCall(string message) 
 		{

@@ -5,10 +5,11 @@ using UnityEngine.Events;
 
 namespace MyCustomSystem.EntityBehaviour.GenericBehaviour
 {
-	public class FunctionGroupCallerBehaviour : AbsCustomBehaviour
+	public class FunctionGroupCallerBehaviour : AbsGenericBehaviour
 	{
 		[SerializeField, Space] bool callOnSetup = false;
-		public UnityEvent calledFunction;
+		[TextArea(), Space] private string inspectorDescription;
+		[Space] public UnityEvent calledFunction;
 
 		protected override void CustomSetup()
 		{

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace MyCustomSystem.EntityBehaviour.GenericBehaviour
 {
-	public class DestroyBehaviour : AbsUniqueCustomBehaviour
+	public class DestroyBehaviour : AbsGenericBehaviour
 	{
 
 		public void DestroyTarget(GameObject target) 
