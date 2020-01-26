@@ -5,7 +5,9 @@
 	using UnityEngine;
 	using UnityEngine.Events;
 
-	[DisallowMultipleComponent]
+	[AddComponentMenu("_MyCustomSystem/EntityBehaviour/Unique Behaviour/Start"),
+	 RequireComponent(typeof(AbsEntity)),
+	 DisallowMultipleComponent]
 	public class Start_Bh : AbsDynamicBehaviour
 	{
 		[Space]

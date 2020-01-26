@@ -1,7 +1,8 @@
 ﻿namespace MyCustomSystem.EntityBehaviour
 {
 	using Sirenix.OdinInspector;
-	using System.Collections;
+    using System;
+    using System.Collections;
 	using System.Collections.Generic;
 	using System.Linq;
 	using UnityEngine;
@@ -21,14 +22,14 @@
 
 		[SerializeField, DisableInPlayMode] private bool _enabled = true;
 
-		[DisableIf("hasBeenSetup"), Space]
+		[TabGroup("AbsEntity_Events", "Setup"), DisableIf("hasBeenSetup"), Space]
 		public UnityEvent onSetup;
-
+		[TabGroup("AbsEntity_Events", "Destory"), Space]
 		public UnityEvent onDestroy;
-
+		[TabGroup("AbsEntity_Events", "Enable & Disable"), Space]
 		public UnityEvent onEnable;
+		[TabGroup("AbsEntity_Events", "Enable & Disable"), Space]
 		public UnityEvent onDisable;
-
 
 		#region PROPERTY
 		public new bool enabled {

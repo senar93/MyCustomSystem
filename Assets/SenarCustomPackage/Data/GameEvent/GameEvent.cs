@@ -17,7 +17,7 @@
 		private bool invokeDebug = false;
 		#endif
 
-		[ShowInInspector][ReadOnly][Space]
+		[ShowInInspector, ReadOnly, Space]
 		private List<GameEventListener> listeners = new List<GameEventListener>();
 
 

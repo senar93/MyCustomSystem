@@ -20,9 +20,9 @@
 		[HideIf("hasBeenSetup")]
 		public bool setupByEntity = true;
 
-		[DisableIf("hasBeenSetup"), Space]
+		[TabGroup("AbsBehaviour_Events", "Setup"), DisableIf("hasBeenSetup"), Space]
 		public UnityEvent onSetup;
-
+		[TabGroup("AbsBehaviour_Events", "Destory"), Space]
 		public UnityEvent onDestroy;
 
 

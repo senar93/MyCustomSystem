@@ -3,7 +3,9 @@
 	using UnityEngine;
 	using UnityEngine.Events;
 
-	[DisallowMultipleComponent]
+	[AddComponentMenu("_MyCustomSystem/EntityBehaviour/Unique Behaviour/Late Update"),
+	 RequireComponent(typeof(AbsEntity)),
+	 DisallowMultipleComponent]
 	public class LateUpdate_Bh : AbsDynamicBehaviour
 	{
 		[Space]

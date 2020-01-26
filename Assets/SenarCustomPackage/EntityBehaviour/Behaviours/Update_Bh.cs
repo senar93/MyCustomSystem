@@ -5,7 +5,9 @@
 	using UnityEngine;
 	using UnityEngine.Events;
 
-	[DisallowMultipleComponent]
+	[AddComponentMenu("_MyCustomSystem/EntityBehaviour/Unique Behaviour/Update"),
+	 RequireComponent(typeof(AbsEntity)),
+	 DisallowMultipleComponent]
 	public class Update_Bh : AbsDynamicBehaviour
 	{
 		[Space]

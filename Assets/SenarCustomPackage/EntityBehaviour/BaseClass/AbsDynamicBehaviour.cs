@@ -14,7 +14,9 @@
 	{
 		[SerializeField, DisableInPlayMode] private bool _enabled = true;
 
+		[TabGroup("AbsBehaviour_Events", "Enable & Disable"), Space]
 		public UnityEvent onEnable;
+		[TabGroup("AbsBehaviour_Events", "Enable & Disable"), Space]
 		public UnityEvent onDisable;
 
 		#region PROPERTY
