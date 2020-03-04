@@ -174,7 +174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   asd:
-    mode: 4
+    mode: 0
 --- !u!114 &854534000
 MonoBehaviour:
   m_ObjectHideFlags: 0

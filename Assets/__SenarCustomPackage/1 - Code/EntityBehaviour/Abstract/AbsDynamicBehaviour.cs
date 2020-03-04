@@ -10,7 +10,7 @@
 	/// <summary>
 	/// behaviour che può essere abilitato o disabilitato tramite il parametro enabled
 	/// </summary>
-	public class AbsDynamicBehaviour : AbsBehaviour
+	public abstract class AbsDynamicBehaviour : AbsBehaviour
 	{
 		[SerializeField, DisableInPlayMode] private bool _enabled = true;
 

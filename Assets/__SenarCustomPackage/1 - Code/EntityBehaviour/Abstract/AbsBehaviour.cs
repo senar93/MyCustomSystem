@@ -10,7 +10,7 @@
 	/// <summary>
 	/// padre di tutti i Behaviour, 
 	/// </summary>
-	public class AbsBehaviour : SerializedMonoBehaviour
+	public abstract class AbsBehaviour : SerializedMonoBehaviour
 	{
 		[ShowIf("hasBeenSetup"), PropertyOrder(int.MinValue), ReadOnly, SerializeField]
 		public AbsEntity entity { get; protected set; }

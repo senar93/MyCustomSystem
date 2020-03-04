@@ -8,7 +8,7 @@
 	[System.Serializable]
 	public class GameEventListener
 	{
-		[SerializeField]
+		[SerializeField, InlineEditor]
 		private GameEvent _gameEvent;
 		public UnityEvent response;
 		

@@ -9,7 +9,7 @@
 	using UnityEngine.Events;
 
 	[DisallowMultipleComponent]
-	public class AbsEntity : SerializedMonoBehaviour
+	public abstract class AbsEntity : SerializedMonoBehaviour
 	{
 		[HideInEditorMode, ReadOnly, SerializeField]
 		public bool hasBeenSetup { get; protected set; }
