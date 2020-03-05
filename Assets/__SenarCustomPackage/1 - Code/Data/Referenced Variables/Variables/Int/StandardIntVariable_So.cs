@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(menuName = "MyCustomSystem/Variables/Int/StandardVar",
 					 fileName = "_NEW_Standard_Int")]
-	public class StandardIntVariable_So : AbsStandardVariable_So<int>, IHaveValue<int>
+	public class StandardIntVariable_So : AbsStandardVariable_So<int>
 	{
 
 	}

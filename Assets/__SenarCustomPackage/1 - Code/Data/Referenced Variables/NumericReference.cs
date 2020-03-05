@@ -6,13 +6,15 @@
 	using UnityEngine;
 	using System;
     using MyCustomSystem.Variables.Interface;
+    using MyCustomSystem.Variables.Abstract;
+    using System.Linq;
 
     //TODO: implementare dei metodi per ottenere una lista aggiornata con i possibili scriptable assegnabili
 
     [System.Serializable]
 	public struct NumericReference
 	{
-		[EnumToggleButtons, HideLabel, SerializeField]
+		[EnumPaging, HideLabel, SerializeField]
 		private Mode mode;
 
 

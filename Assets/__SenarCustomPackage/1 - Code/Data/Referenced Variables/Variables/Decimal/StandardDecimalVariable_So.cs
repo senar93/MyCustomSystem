@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(menuName = "MyCustomSystem/Variables/Decimal/StandardVar",
 					 fileName = "_NEW_Standard_Decimal")]
-	public class StandardDecimalVariable_So : AbsStandardVariable_So<decimal>, IHaveValue<decimal>
+	public class StandardDecimalVariable_So : AbsStandardVariable_So<decimal>
 	{
 
 	}

@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(menuName = "MyCustomSystem/Variables/Double/StandardVar",
 					 fileName = "_NEW_Standard_Double")]
-	public class StandardDoubleVariable_So : AbsStandardVariable_So<double>, IHaveValue<double>
+	public class StandardDoubleVariable_So : AbsStandardVariable_So<double>
 	{
 
 	}
