@@ -10,6 +10,8 @@
 	using System;
 
 	//https://github.com/pieterderycke/Jace
+	//TODO: pulsante Bake per creare la versione ottimizzata non modificabile della formula
+	//TODO: pulsante UnBake per tornare alla versione non ottimizzata facilmente modificabile
 
 	[CreateAssetMenu(menuName = "MyCustomSystem/Variables/Double/Formula Var",
 					 fileName = "_NEW FormulaDouble")]
