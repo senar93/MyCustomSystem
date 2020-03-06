@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(menuName = "MyCustomSystem/Variables/Float/StandardVar",
 					 fileName = "_NEW_Standard_Float")]
-	public class StandardFloatVariable_So : AbsStandardVariable_So<float>, IHaveValue<float>
+	public class StandardFloatVariable_So : AbsStandardVariable_So<float>
 	{
 
 	}

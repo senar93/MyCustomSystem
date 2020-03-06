@@ -7,7 +7,7 @@
 	using MyCustomSystem.Variables.Interface;
 
 
-	public abstract class AbsVariable_So<T> : SerializedScriptableObject, IHaveValue<T>
+	public abstract class AbsVariable_So<T> : SerializedScriptableObject, IReferenceableVariabile<T>
 	{
 		public abstract T Value { get; set; }
 
