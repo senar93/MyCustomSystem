@@ -8,10 +8,11 @@
     using MyCustomSystem.Variables.Interface;
     using MyCustomSystem.Variables.Abstract;
     using System.Linq;
+    using Sirenix.Serialization;
 
-    //TODO: implementare dei metodi per ottenere una lista aggiornata con i possibili scriptable assegnabili
 
-    [System.Serializable]
+    //TODO: implementare dei metodi per ottenere una lista aggiornata con i possibili scriptable assegnabili se si usano le interface
+    //[System.Serializable] Don't use this to avoid Odin and unity serialization bug, let odin serialize all
 	public struct NumericReference
 	{
 		[EnumPaging, HideLabel, SerializeField]
@@ -26,29 +27,32 @@
 		[ShowIf("mode", Mode.FloatRef),
 		 Required("Reference is required!"),
 		 InfoBox("Edit referenced variable here change it everywhere!", "IsNotFloatRefNull"),
-		 InlineEditor, HideLabel, ShowInInspector, Space(10)]
+		 InlineEditor, HideLabel, SerializeField, Space(10),
+		 OdinSerialize]	//to avoid unity serialization bug
 		private IHaveValue<float> _floatRef;
 
 		[ShowIf("mode", Mode.DoubleRef),
 		 Required("Reference is required!"),
 		 InfoBox("Edit referenced variable here change it everywhere!", "IsNotDoubleRefNull"),
-		 InlineEditor, HideLabel, ShowInInspector, Space(10)]
+		 InlineEditor, HideLabel, SerializeField, Space(10),
+		 OdinSerialize] //to avoid unity serialization bug
 		private IHaveValue<double> _doubleRef;
 
 		[ShowIf("mode", Mode.DecimalRef),
 		 Required("Reference is required!"),
 		 InfoBox("Edit referenced variable here change it everywhere!", "IsNotDecimalRefNull"),
-		 InlineEditor, HideLabel, ShowInInspector, Space(10)]
+		 InlineEditor, HideLabel, SerializeField, Space(10),
+		 OdinSerialize] //to avoid unity serialization bug
 		private IHaveValue<decimal> _decimalRef;
 
 		[ShowIf("mode", Mode.IntRef),
 		 Required("Reference is required!"),
 		 InfoBox("Edit referenced variable here change it everywhere!", "IsNotIntRefNull"),
-		 InlineEditor, HideLabel, ShowInInspector, Space(10)]
+		 InlineEditor, HideLabel, SerializeField, Space(10), 
+		 OdinSerialize] //to avoid unity serialization bug
 		private IHaveValue<int> _intRef;
 
 		#endregion
-
 
 
 		public decimal Value {
