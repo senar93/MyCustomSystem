@@ -11,7 +11,7 @@
 	{
 		public abstract T Value { get; set; }
 
-		[ShowInInspector, ReadOnly]
+		[SerializeField, ReadOnly]
 		public abstract bool CanSetValue { get; }
 	}
 }

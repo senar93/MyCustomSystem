@@ -23,7 +23,7 @@
 
 		[DictionaryDrawerSettings(KeyLabel = "Name", ValueLabel = "Value", DisplayMode = DictionaryDisplayOptions.Foldout),
 		 Space(20)]
-		public Dictionary<string, NumericReference> variable = new Dictionary<string, NumericReference>();
+		public Dictionary<string, AbsNumericReference> variable = new Dictionary<string, AbsNumericReference>();
 
 		Jace.CalculationEngine engine = new Jace.CalculationEngine();
 
@@ -32,7 +32,7 @@
 		public override double Value {
 			get {
 				Dictionary<string, double> realVariable = variable.ToDictionary(item => item.Key,
-																				 item => Convert.ToDouble(item.Value.Value));
+																				 item => Convert.ToDouble(item.Value.DoubleValue));
 
 				return engine.Calculate(formula, realVariable);
 			}

@@ -12,7 +12,7 @@
         [MinValue(0), SerializeField, HideInEditorMode] private float currentTime = 0;
         [MinValue(0)] public float timer;
 
-        [MinValue(0)] public float timeScale;
+        [MinValue(0)] public float timeScale = 1;
 
         [ShowInInspector] public bool isEnded { get; private set; }
 

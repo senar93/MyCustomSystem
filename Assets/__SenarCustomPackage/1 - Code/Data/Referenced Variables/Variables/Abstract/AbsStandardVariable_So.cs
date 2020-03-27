@@ -10,9 +10,9 @@
 
 	public abstract class AbsStandardVariable_So<T> : AbsVariable_So<T>, ISerializationCallbackReceiver
 	{
-		[ShowInInspector, PropertyOrder(int.MinValue)]
+		[SerializeField, PropertyOrder(int.MinValue)]
 		public T startingValue { get; protected set; }
-		[ShowInInspector, HideInEditorMode, Space]
+		[SerializeField, HideInEditorMode, Space]
 		private T currentValue;
 		[SerializeField]
 		private bool isReadOnly = false;
