@@ -5,11 +5,10 @@ using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 
-[System.Serializable]
-public class ShaderParameterColor : AbsShaderParameter
+public class ShaderParameterColor : AbsShaderParameter<Color>
 {
     [ShowInInspector, ShowIf("CanSetMaterialParameter")]
-    public Color value {
+    public override Color Value {
         get {
             return CanSetMaterialParameter() ? targetMaterial.GetColor(shaderParameterName) : Color.clear;
         }
@@ -22,11 +21,12 @@ public class ShaderParameterColor : AbsShaderParameter
         }
     }
 
-    public ShaderParameterColor(Material material, string shaderParameterName, Color startingValue)
+
+	public ShaderParameterColor(Material material, string shaderParameterName, Color startingValue)
     {
         targetMaterial = material;
         this.shaderParameterName = shaderParameterName;
-        value = startingValue;
+        Value = startingValue;
     }
 
 }

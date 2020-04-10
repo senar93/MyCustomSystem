@@ -5,15 +5,16 @@ using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 
-[System.Serializable]
-public abstract class AbsShaderParameter
+public abstract class AbsShaderParameter<T>
 {
     public Material targetMaterial;
     public string shaderParameterName;
 
+	public abstract T Value { get; set; }
+
     public UnityEvent onValueChange;
 
-    protected bool CanSetMaterialParameter()
+    public bool CanSetMaterialParameter()
     {
         return targetMaterial != null && targetMaterial.HasProperty(shaderParameterName);
     }

@@ -5,12 +5,11 @@ using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 
-[System.Serializable]
-public class ShaderParameterFloat : AbsShaderParameter
+public class ShaderParameterFloat : AbsShaderParameter<float>
 {
 
     [ShowInInspector, ShowIf("CanSetMaterialParameter")]
-    public float value {
+    public override float Value {
         get {
             return CanSetMaterialParameter() ? targetMaterial.GetFloat(shaderParameterName) : -9999;
         }
@@ -27,7 +26,7 @@ public class ShaderParameterFloat : AbsShaderParameter
     {
         targetMaterial = material;
         this.shaderParameterName = shaderParameterName;
-        value = startingValue;
+        Value = startingValue;
     }
 
 }

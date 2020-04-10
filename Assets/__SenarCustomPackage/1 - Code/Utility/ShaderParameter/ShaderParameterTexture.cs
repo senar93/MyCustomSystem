@@ -5,11 +5,10 @@ using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 
-[System.Serializable]
-public class ShaderParameterTexture : AbsShaderParameter
+public class ShaderParameterTexture : AbsShaderParameter<Texture>
 {
     [ShowInInspector, ShowIf("CanSetMaterialParameter")]
-    public Texture value {
+    public override Texture Value {
         get {
             return CanSetMaterialParameter() ? targetMaterial.GetTexture(shaderParameterName) : null;
         }
@@ -26,7 +25,7 @@ public class ShaderParameterTexture : AbsShaderParameter
     {
         targetMaterial = material;
         this.shaderParameterName = shaderParameterName;
-        value = startingValue;
+        Value = startingValue;
     }
 
 }
