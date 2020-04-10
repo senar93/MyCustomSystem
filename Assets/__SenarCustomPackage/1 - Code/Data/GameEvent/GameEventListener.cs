@@ -20,12 +20,15 @@
 			}
 			set
 			{
-				bool previouslySubscribed = IsSubscribed();
-				Unsubscribe();
-				_gameEvent = value;
-				if(previouslySubscribed)
+				if (_gameEvent != value)
 				{
-					Subscribe();
+					bool previouslySubscribed = IsSubscribed();
+					Unsubscribe();
+					_gameEvent = value;
+					if (previouslySubscribed)
+					{
+						Subscribe();
+					}
 				}
 			}
 		}
