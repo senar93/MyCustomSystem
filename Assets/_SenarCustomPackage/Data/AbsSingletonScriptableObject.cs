@@ -61,13 +61,13 @@
 			{
 				if (tmp != null && tmp.Length > 1)
 				{
-					string msg = "Sono state trovate più istanze della classe <color=" + DebugHelper.colorBlue + ">" + type + "</color>\n" +
+					string msg = "Sono state trovate più istanze della classe <color=" + "blue" + ">" + type + "</color>\n" +
 									"Verrà caricato solo il primo file in ordine alfabetico\n" +
-									"Loaded:  <color=" + DebugHelper.colorGreen + ">" + tmp.First().name + "</color>";
+									"Loaded:  <color=" + "#0A8721" + ">" + tmp.First().name + "</color>";
 					msg += "\n";
 					for (int i = 1; i < tmp.Length; i++)
 					{
-						msg += "Not Loaded:  <color=" + DebugHelper.colorRed + ">" + tmp[i].name + "</color>\n";
+						msg += "Not Loaded:  <color=" + "#B51010" + ">" + tmp[i].name + "</color>\n";
 					}
 				
 					Debug.LogWarning(msg);
@@ -78,7 +78,7 @@
 			{
 				if (tmp == null || tmp.Length < 1)
 				{
-					Debug.LogError("File di tipo <color=" + DebugHelper.colorBlue + ">" + type + "</color> non trovato!\n" + 
+					Debug.LogError("File di tipo <color=" + "blue" + ">" + type + "</color> non trovato!\n" + 
 									"Il file non esiste o non si trova in alcuna cartella \"Resources\"");
 				}
 			}
@@ -87,8 +87,8 @@
 			{
 				if (tmp != null && tmp.Length == 1)
 				{
-					Debug.Log("File di tipo <color=" + DebugHelper.colorBlue + ">" + type + "</color> trovato correttamente\n" +
-								"Loaded:  <color=" + DebugHelper.colorGreen + ">" + tmp.First().name + "</color>");
+					Debug.Log("File di tipo <color=" + "blue" + ">" + type + "</color> trovato correttamente\n" +
+								"Loaded:  <color=" + "#0A8721" + ">" + tmp.First().name + "</color>");
 				}
 			}
 		#endif
