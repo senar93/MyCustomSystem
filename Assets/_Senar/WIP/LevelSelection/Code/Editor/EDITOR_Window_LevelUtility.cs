@@ -7,7 +7,7 @@
     using Sirenix.OdinInspector;
     using System.Linq;
 
-    public class LevelUtility : EditorWindow
+    public class EDITOR_Window_LevelUtility : EditorWindow
     {
         //TODO:
         //aggiungere un file di configurazione scriptable singleton, che contenga le configurazioni di questo sistema e si ricrei se viene eliminato
@@ -18,7 +18,7 @@
         public static void ShowWindow()
         {
             //Show existing window instance. If one doesn't exist, make one.
-            EditorWindow.GetWindow(typeof(LevelUtility));
+            EditorWindow.GetWindow(typeof(EDITOR_Window_LevelUtility));
         }
 
 
@@ -33,17 +33,17 @@
                 SetEditorBuildSettingsScenes();
             }
 
-            if ( LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild == false && 
+            if ( SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild == false && 
                  GUILayout.Button("ENABLE: Auto Add Level On Build"))
             {
-                LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild = true;
-                Debug.Log("Auto set levels scene on build " + (LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild ? "ENABLED" : "DISABLED"));
+                SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild = true;
+                Debug.Log("Auto set levels scene on build " + (SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild ? "ENABLED" : "DISABLED"));
             }
-            else if ( LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild == true &&
+            else if ( SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild == true &&
                       GUILayout.Button("DISABLE: Auto Add Level On Build"))
             {
-                LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild = false;
-                Debug.Log("Auto set levels scene on build " + (LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild ? "ENABLED" : "DISABLED"));
+                SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild = false;
+                Debug.Log("Auto set levels scene on build " + (SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild ? "ENABLED" : "DISABLED"));
             }
             /*if (GUILayout.Button("TEST"))
             {
@@ -62,12 +62,12 @@
             for (int j = 0; j < guids.Length; j++)
             {
                 string tmpWorldPath = AssetDatabase.GUIDToAssetPath(guids[j]);
-                AssetWorld tmpWorld = AssetDatabase.LoadAssetAtPath(tmpWorldPath, typeof(AssetWorld)) as AssetWorld;
+                SO_AssetWorld tmpWorld = AssetDatabase.LoadAssetAtPath(tmpWorldPath, typeof(SO_AssetWorld)) as SO_AssetWorld;
                 tmpWorld.EDITOR_RemoveNullElements();
 
                 for (int i = 0; i < tmpWorld.levels.Count; i++)
                 {
-                    AssetLevel tmpLevel = tmpWorld.levels[i];
+                    SO_AssetLevel tmpLevel = tmpWorld.levels[i];
                     if (tmpLevel.EDITOR_scene)
                     {
                         tmpLevel.EDITOR_SetSceneNameAndPath();

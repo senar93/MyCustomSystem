@@ -4,7 +4,7 @@
 	using Sirenix.OdinInspector;
 	using System.Linq;
 
-	public abstract class Abs_SO_Singleton<T> : SerializedScriptableObject where T : Abs_SO_Singleton<T>
+	public abstract class SO_Abs_Singleton<T> : SerializedScriptableObject where T : SO_Abs_Singleton<T>
 	{
 		[SerializeField] protected bool excludeFromLoading = false; 
 

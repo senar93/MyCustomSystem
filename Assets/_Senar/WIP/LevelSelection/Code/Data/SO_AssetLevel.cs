@@ -6,7 +6,7 @@
     using UnityEngine.SceneManagement;
 
     [CreateAssetMenu(fileName = "Level 1", menuName = "Custom/Level Selection/Level", order = 2)]
-    public class AssetLevel : SerializedScriptableObject
+    public class SO_AssetLevel : SerializedScriptableObject
     {
         public string levelName;
 
@@ -24,7 +24,7 @@
         private string _sceneCompletePath;
 
         [AssetSelector, Required("It cannot be NULL!\nBut it can be set automatically by the world")]
-        public AssetWorld world;
+        public SO_AssetWorld world;
 
 
         #if UNITY_EDITOR

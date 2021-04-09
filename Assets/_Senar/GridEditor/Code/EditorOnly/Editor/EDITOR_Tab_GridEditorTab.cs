@@ -13,7 +13,7 @@ namespace Senar.Grid.Editor
     using Senar.Grid.Data;
 
     [ShowOdinSerializedPropertiesInInspector]
-    public class EDITOR_ToolWindow_GridEditorTab
+    public class EDITOR_Tab_GridEditorTab
     {
         [ShowIf("targetGridAsset"), ReadOnly]
         public SO_SenarGrid targetGridAsset;

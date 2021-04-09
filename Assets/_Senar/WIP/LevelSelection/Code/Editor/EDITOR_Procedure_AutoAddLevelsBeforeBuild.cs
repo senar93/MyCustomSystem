@@ -6,16 +6,16 @@
     using UnityEditor.Build.Reporting;
     using UnityEngine;
 
-    class AutoAddLevelsBeforeBuild : IPreprocessBuildWithReport
+    class EDITOR_Procedure_AutoAddLevelsBeforeBuild : IPreprocessBuildWithReport
     {
         public int callbackOrder { get { return 0; } }
         public void OnPreprocessBuild(BuildReport report)
         {
-            if ( LevelSelectionConf.Instance != null && 
-                 LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild )
+            if ( SingletonSO_LevelSelectionConf.Instance != null && 
+                 SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild )
             {
                 Debug.Log("Auto set all levels scene: Start");
-                LevelUtility.SetEditorBuildSettingsScenes();
+                EDITOR_Window_LevelUtility.SetEditorBuildSettingsScenes();
                 Debug.Log("Auto set all levels scene: Done");
             }
         }

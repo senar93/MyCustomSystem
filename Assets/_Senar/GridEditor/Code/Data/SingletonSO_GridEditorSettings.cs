@@ -6,7 +6,7 @@
     using Senar.Data;
 
     [CreateAssetMenu]
-    public class SingletonSO_GridEditorSettings : Abs_SO_Singleton<SingletonSO_GridEditorSettings>
+    public class SingletonSO_GridEditorSettings : SO_Abs_Singleton<SingletonSO_GridEditorSettings>
     {
         public string gridPath = "Assets/Resources/Grids/";
         //public int gridMaxWidth = 30;

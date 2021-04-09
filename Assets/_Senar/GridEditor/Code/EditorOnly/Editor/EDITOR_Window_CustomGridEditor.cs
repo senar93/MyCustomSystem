@@ -8,12 +8,12 @@ namespace Senar.Grid.Editor
     using UnityEngine;
     using Senar.Grid.Data;
 
-    public class EDITOR_Tool_CustomGridEditor : OdinMenuEditorWindow
+    public class EDITOR_Window_CustomGridEditor : OdinMenuEditorWindow
     {
         [MenuItem("Custom Tools/Grid Editor")]
         private static void OpenWindow()
         {
-            GetWindow<EDITOR_Tool_CustomGridEditor>().Show();
+            GetWindow<EDITOR_Window_CustomGridEditor>().Show();
         }
 
         protected override OdinMenuTree BuildMenuTree()
@@ -23,12 +23,12 @@ namespace Senar.Grid.Editor
 
             tree.Add("Settings", SingletonSO_GridEditorSettings.Instance);
 
-            tree.Add("NEW GRID", new EDITOR_ToolWindow_GridEditorTab());
+            tree.Add("NEW GRID", new EDITOR_Tab_GridEditorTab());
 
             SO_SenarGrid[] allGrids = Resources.LoadAll<SO_SenarGrid>("");
             foreach (SO_SenarGrid currentGrid in allGrids)
             {
-                EDITOR_ToolWindow_GridEditorTab tmpGridEditor = new EDITOR_ToolWindow_GridEditorTab();
+                EDITOR_Tab_GridEditorTab tmpGridEditor = new EDITOR_Tab_GridEditorTab();
                 tmpGridEditor.LoadGridAsset(currentGrid);
                 tree.Add("Grids/" + currentGrid.name, tmpGridEditor);
             }

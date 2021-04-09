@@ -7,12 +7,12 @@
     using UnityEditor;
 
     [CreateAssetMenu(fileName = "World 1", menuName = "Custom/Level Selection/World", order = 1)]
-    public class AssetWorld : SerializedScriptableObject
+    public class SO_AssetWorld : SerializedScriptableObject
     {
         public string worldName;
 
         [Space(20), AssetSelector, InlineEditor]
-        public List<AssetLevel> levels;
+        public List<SO_AssetLevel> levels;
 
 
         #if UNITY_EDITOR
@@ -21,7 +21,7 @@
             public void EDITOR_SetWorldReferenceToAllLevelsInList()
             {
                 EDITOR_RemoveNullElements();
-                foreach (AssetLevel level in levels)
+                foreach (SO_AssetLevel level in levels)
                 {
                     level.world = this;
                 }
@@ -47,7 +47,7 @@
 
             private bool EDITOR_CheckWrongLevelsWorldReference()
             {
-                foreach (AssetLevel level in levels)
+                foreach (SO_AssetLevel level in levels)
                 {
                     if (level != null && level.world != this)
                     {
@@ -59,7 +59,7 @@
 
             private bool EDITOR_CheckNullElementsInLevels()
             {
-                foreach (AssetLevel level in levels)
+                foreach (SO_AssetLevel level in levels)
                 {
                     if (level == null)
                     {
