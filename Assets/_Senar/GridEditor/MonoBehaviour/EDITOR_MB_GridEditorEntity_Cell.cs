@@ -1,10 +1,8 @@
-﻿#if UNITY_EDITOR
-namespace Senar.Grid.Editor
+﻿namespace Senar.Grid.Editor
 {
     using UnityEngine;
     using Sirenix.OdinInspector;
     using System.Collections.Generic;
-    using Senar.Grid.Editor;
 
     /// <summary>
     /// monobehaviour compilato solo in editor; 
@@ -13,6 +11,7 @@ namespace Senar.Grid.Editor
     [RequireComponent(typeof(MB_GenericCell))]
     public class EDITOR_MB_GridEditorEntity_Cell : MonoBehaviour
     {
+        #if UNITY_EDITOR
         [SerializeField, DisableInPlayMode]
         private MB_GenericCell _cell;
         
@@ -47,7 +46,8 @@ namespace Senar.Grid.Editor
                 drawMode.Draw(rect);
             }
         }
+
+        #endif
     }
 
 }
-#endif
