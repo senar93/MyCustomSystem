@@ -29,7 +29,7 @@
 
         #region EDITOR
         #if UNITY_EDITOR
-        public List<Abs_GridInstantiatorPass> extraPass = new List<Abs_GridInstantiatorPass>();
+        public List<EDITOR_Abs_GridInstantiatorPass> EDITOR_extraPass = new List<EDITOR_Abs_GridInstantiatorPass>();
         #endif
 
         #if UNITY_EDITOR
@@ -52,28 +52,12 @@
                         }
                     }
                 }
-                foreach (Abs_GridInstantiatorPass pass in extraPass)
+                foreach (EDITOR_Abs_GridInstantiatorPass pass in EDITOR_extraPass)
                 {
                     pass?.Pass(this);
                 }
             }
 
-            /*for(int i = -1; i < gridDataReference.grid.GetLength(0) + 1; i++)
-            {
-                InstantiateCell(i, -1, invisibleWall, false);
-            }
-            for (int i = -1; i < gridDataReference.grid.GetLength(0) + 1; i++)
-            {
-                InstantiateCell(i, gridDataReference.grid.GetLength(1), invisibleWall, false);
-            }
-            for (int i = 0; i < gridDataReference.grid.GetLength(1); i++)
-            {
-                InstantiateCell(-1, i, invisibleWall, false);
-            }
-            for (int i = 0; i < gridDataReference.grid.GetLength(1); i++)
-            {
-                InstantiateCell(gridDataReference.grid.GetLength(0), i, invisibleWall, false);
-            }*/
             EditorUtility.SetDirty(this.gameObject);
             AssetDatabase.SaveAssets();
         }

@@ -6,7 +6,7 @@ namespace Senar.Grid.Editor
     using System.Collections.Generic;
     using UnityEngine;
 
-    public abstract class Abs_GridInstantiatorPass
+    public abstract class EDITOR_Abs_GridInstantiatorPass
     {
         public abstract void Pass(MB_GenericGrid currentGrid);
     }

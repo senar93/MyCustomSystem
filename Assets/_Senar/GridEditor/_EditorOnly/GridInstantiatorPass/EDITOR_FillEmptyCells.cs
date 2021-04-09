@@ -6,7 +6,7 @@ namespace Senar.Grid.Editor
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class GridInstantiatorPass_FillEmptyCells : Abs_GridInstantiatorPass
+    public class EDITOR_FillEmptyCells : EDITOR_Abs_GridInstantiatorPass
     {
         [Required, ValueDropdown("ValueDropdown_PossibileCells")]
         public MB_GenericCell emptyCell;
@@ -28,9 +28,9 @@ namespace Senar.Grid.Editor
         public MB_GenericCell[] ValueDropdown_PossibileCells()
         {
             List<MB_GenericCell> tmpList = new List<MB_GenericCell>();
-            foreach (EDITOR_MB_GridEditorEntity_Cell tmpCell in EDITOR_MB_GridEditorEntity_Cell.EDITOR_cellsType)
+            foreach (EDITOR_MB_Cell tmpCell in EDITOR_MB_Cell.EDITOR_allCellsType)
             {
-                tmpList.Add(tmpCell.cell);
+                tmpList.Add(tmpCell.EDITOR_cell);
             }
             return tmpList.ToArray();
         }
