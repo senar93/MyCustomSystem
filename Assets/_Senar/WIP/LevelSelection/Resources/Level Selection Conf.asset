@@ -22,4 +22,4 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   excludeFromLoading: 0
-  autoAddAllLevelInAllWorldsOnBuild: 1
+  autoAddAllLevelInAllWorldsOnBuild: 0
