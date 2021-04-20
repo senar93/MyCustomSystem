@@ -10,15 +10,8 @@
     /// Template for a generic variable
     /// </summary>
     /// <typeparam name="T">variable type</typeparam>
-    public abstract class SO_Abs_Variable<T> : SerializedScriptableObject
+    public abstract class SO_Abs_VariableList<T> : SO_Abs_VariableStandard<List<T>>
     {
-        /// <summary>
-        /// Get and Set value, callback on set if needed
-        /// </summary>
-        public abstract T Value {
-            get;
-            set;
-        }
-
+        
     }
 }

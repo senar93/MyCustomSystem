@@ -18,6 +18,8 @@
         [SerializeField, DisableInEditorMode]
         protected T _value;
 
+        [SerializeField, FoldoutGroup("Settings", 0)]
+        protected bool callOnValueChangedInEditor = false;
         [SerializeField, FoldoutGroup("Settings", 1)]
         protected bool callOnValueChanged = false;
 
@@ -44,6 +46,23 @@
         /// </summary>
         [HideInInspector, NonSerialized]
         public Action<T, T> OnValueChanged;
+
+        /// <summary>
+        /// Callback on value changed in editor, p1: NewValue
+        /// </summary>
+        [HideInInspector, NonSerialized]
+        public Action<T> EDITOR_OnValueChanged;
+
+        /// <summary>
+        /// Call EDITOR_OnValueChanged if CallOnValueChangedInEditor is TRUE
+        /// </summary>
+        protected virtual void OnValidate()
+        {
+            if (callOnValueChangedInEditor)
+            {
+                EDITOR_OnValueChanged?.Invoke(Value);
+            }
+        }
 
     }
 }

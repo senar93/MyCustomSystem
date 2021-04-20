@@ -1,4 +1,5 @@
-﻿namespace Senar.WIP.Data
+﻿/*
+namespace Senar.WIP.Data
 {
     using UnityEngine;
     using Sirenix.OdinInspector;
@@ -11,3 +12,4 @@
         public bool autoAddAllLevelInAllWorldsOnBuild = true;
     }
 }
+*/

@@ -1,4 +1,5 @@
-﻿namespace Senar.WIP.Data.LevelSelection.Editor
+﻿/*
+namespace Senar.WIP.Data.LevelSelection.Editor
 {
 #if UNITY_EDITOR
     using UnityEditor;
@@ -23,3 +24,4 @@
 
 #endif
 }
+*/

@@ -1,4 +1,5 @@
-﻿namespace Senar.WIP.Data.LevelSelection.Editor
+﻿/*
+namespace Senar.WIP.Data.LevelSelection.Editor
 {
 #if UNITY_EDITOR
     using System.Collections.Generic;
@@ -45,12 +46,6 @@
                 SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild = false;
                 Debug.Log("Auto set levels scene on build " + (SingletonSO_LevelSelectionConf.Instance.autoAddAllLevelInAllWorldsOnBuild ? "ENABLED" : "DISABLED"));
             }
-            /*if (GUILayout.Button("TEST"))
-            {
-                LevelSelectionConf a = ScriptableObject.CreateInstance(typeof(LevelSelectionConf)) as LevelSelectionConf;
-                AssetDatabase.CreateAsset(a, "Assets/SingletonAsset_CreatedBySystem.asset");
-                Debug.Log(a.name);
-            }*/
         }
 
 
@@ -89,3 +84,4 @@
 
 #endif
 }
+*/
