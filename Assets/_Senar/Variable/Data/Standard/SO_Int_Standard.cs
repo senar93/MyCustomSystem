@@ -6,7 +6,7 @@
 
     [CreateAssetMenu(fileName = "VariableStandard_Int",
                      menuName = "Senar/Global Variables/Standard/int")]
-    public class SO_Int_VariableStandard : SO_Abs_VariableStandard<int>
+    public class SO_Int_Standard : SO_Abs_Variable_Standard<int>
     {
 
     }

@@ -6,7 +6,7 @@
 
     [CreateAssetMenu(fileName = "VariableStandard_Vector3",
                      menuName = "Senar/Global Variables/Standard/vector3")]
-    public class SO_Vector3_VariableStandard : SO_Abs_VariableStandard<Vector3>
+    public class SO_Vector3_Standard : SO_Abs_Variable_Standard<Vector3>
     {
 
     }

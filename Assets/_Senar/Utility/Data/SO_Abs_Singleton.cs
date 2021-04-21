@@ -6,7 +6,7 @@
 
 	public abstract class SO_Abs_Singleton<T> : SerializedScriptableObject where T : SO_Abs_Singleton<T>
 	{
-		[SerializeField] protected bool excludeFromLoading = false; 
+		[SerializeField] protected bool excludeFromLoading = false;
 
 		protected static T _instance;
 		public static T Instance
@@ -51,7 +51,7 @@
 			}
 
 			#if DEBUG || UNITY_EDITOR
-				DebugLog_FileFound(tmp, typeof(T));
+				//DebugLog_FileFound(tmp, typeof(T));
 				DebugLogWarning_MultipleFilesFound(tmp, typeof(T));
 				DebugLogError_NoFilesFound(tmp, typeof(T));
 			#endif
@@ -87,14 +87,14 @@
 				}
 			}
 
-			private static void DebugLog_FileFound(T[] tmp, System.Type type)
+			/*private static void DebugLog_FileFound(T[] tmp, System.Type type)
 			{
 				if (tmp != null && tmp.Length == 1)
 				{
 					Debug.Log("File di tipo <color=" + "blue" + ">" + type + "</color> trovato correttamente\n" +
 								"Loaded:  <color=" + "#0A8721" + ">" + tmp.First().name + "</color>");
 				}
-			}
+			}*/
 		#endif
 		#endregion
 

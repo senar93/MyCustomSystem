@@ -10,7 +10,7 @@
     /// If possible it loads the value of the variable saved in the PlayerPrefs
     /// </summary>
     /// <typeparam name="T">variable type</typeparam>
-    public abstract class SO_Abs_VariablePlayerPrefs<T> : SO_Abs_VariableStandard<T>
+    public abstract class SO_Abs_Variable_PlayerPrefs<T> : SO_Abs_Variable_Standard<T>
     {
         [PropertyOrder(int.MinValue), Required("The key must be set and must be unique!")]
         public string key;

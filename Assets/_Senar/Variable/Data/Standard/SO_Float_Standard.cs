@@ -6,7 +6,7 @@
 
     [CreateAssetMenu(fileName = "VariableStandard_Float",
                      menuName = "Senar/Global Variables/Standard/float")]
-    public class SO_Float_VariableStandard : SO_Abs_VariableStandard<float>
+    public class SO_Float_Standard : SO_Abs_Variable_Standard<float>
     {
 
     }

@@ -20,7 +20,8 @@
         [ShowIf("EDITOR_HaveCellEditorData"), DisableInPlayMode, Button("Add Cell Editor Data", ButtonSizes.Gigantic), GUIColor(0.7f, 1f, 0.7f)]
         private void EDITOR_AddCellEditorDataButton()
         {
-            this.gameObject.AddComponent<EDITOR_MB_Cell>();
+            EDITOR_MB_Cell tmp = this.gameObject.AddComponent<EDITOR_MB_Cell>();
+            tmp.EDITOR_SetCell(this);
             EditorUtility.SetDirty(this.gameObject);
             AssetDatabase.SaveAssets();
         }

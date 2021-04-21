@@ -14,6 +14,10 @@ namespace Senar.Grid.Editor
 		public bool down = true;
 		public bool right = true;
 
+		public float upSize = 0.7f;
+		public float leftSize = 0.7f;
+		public float downSize = 0.7f;
+		public float rightSize = 0.7f;
 
 		public override void Draw(Rect rect)
 		{
@@ -21,10 +25,10 @@ namespace Senar.Grid.Editor
 			Rect tmpUp = new Rect(rect);
 			Rect tmpDown = new Rect(rect);
 			Rect tmpRight = new Rect(rect);
-			tmpLeft.xMax = tmpLeft.xMax - tmpLeft.width * 0.7f;
-			tmpRight.xMin = tmpRight.xMin - tmpRight.width * 0.7f;
-			tmpUp.yMax = tmpUp.yMax - tmpUp.height * 0.7f;
-			tmpDown.yMax = tmpDown.yMin - tmpDown.height * 0.7f;
+			tmpUp.yMax = tmpUp.yMax - tmpUp.height * upSize;
+			tmpLeft.xMax = tmpLeft.xMax - tmpLeft.width * leftSize;
+			tmpDown.yMin = tmpDown.yMin + tmpDown.height * downSize;
+			tmpRight.xMin = tmpRight.xMin + tmpRight.width * rightSize;
 
 			if (up) UnityEditor.EditorGUI.DrawRect(tmpUp.Padding(1f), borderColor);
 			if (left) UnityEditor.EditorGUI.DrawRect(tmpLeft.Padding(1f), borderColor);

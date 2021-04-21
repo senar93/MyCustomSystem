@@ -8,7 +8,7 @@
 
 	[CreateAssetMenu(fileName = "Random_Int",
 					 menuName = "Senar/Global Variables/Random/int")]
-	public class SO_Int_VariableRandom : SO_Abs_Variable<int>, ISerializationCallbackReceiver
+	public class SO_Int_Random : SO_Abs_Variable<int>, ISerializationCallbackReceiver
 	{
 		[SerializeField, PropertyOrder(int.MinValue)]
 		public SeedRandom randomParameter;

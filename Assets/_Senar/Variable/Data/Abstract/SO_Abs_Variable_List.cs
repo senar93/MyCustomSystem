@@ -10,7 +10,7 @@
     /// Template for a generic variable
     /// </summary>
     /// <typeparam name="T">variable type</typeparam>
-    public abstract class SO_Abs_VariableList<T> : SO_Abs_VariableStandard<List<T>>
+    public abstract class SO_Abs_Variable_List<T> : SO_Abs_Variable_Standard<List<T>>
     {
         
     }

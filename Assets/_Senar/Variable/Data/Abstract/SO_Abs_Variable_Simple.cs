@@ -10,7 +10,7 @@
     /// Simple variable without an initial state
     /// </summary>
     /// <typeparam name="T">variable type</typeparam>
-    public abstract class SO_Abs_VariableSimple<T> : SO_Abs_Variable<T>
+    public abstract class SO_Abs_Variable_Simple<T> : SO_Abs_Variable<T>
     {
         /// <summary>
         /// Current value of the variable

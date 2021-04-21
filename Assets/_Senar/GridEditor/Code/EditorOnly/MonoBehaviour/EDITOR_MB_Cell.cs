@@ -34,6 +34,10 @@
 			}
 		}
 
+        public void EDITOR_SetCell(MB_GenericCell cell)
+        {
+            _cell = cell;
+        }
 
 
         public static EDITOR_MB_Cell[] EDITOR_allCellsType {

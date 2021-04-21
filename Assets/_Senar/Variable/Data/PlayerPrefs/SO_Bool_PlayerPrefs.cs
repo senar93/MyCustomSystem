@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(fileName = "PlayerPrefs_Bool",
 					 menuName = "Senar/Global Variables/PlayerPrefs/bool")]
-	public class SO_Bool_VariablePlayerPrefs : SO_Abs_VariablePlayerPrefs<bool>
+	public class SO_Bool_PlayerPrefs : SO_Abs_Variable_PlayerPrefs<bool>
 	{
 		protected override bool GetValueFromPlayerPrefs()
 		{
@@ -15,7 +15,7 @@
 
 		protected override void SetValueToPlayerPrefs(bool valueToSet)
 		{
-			PlayerPrefs.SetInt(key, _value ? 1 : 0);
+			PlayerPrefs.SetInt(key, valueToSet ? 1 : 0);
 		}
 	}
 }

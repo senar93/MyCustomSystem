@@ -7,7 +7,7 @@
 
     [CreateAssetMenu(fileName = "VariableList_Int",
                      menuName = "Senar/Level Selection/Levels List")]
-    public class SO_LevelScene_VariableList : SO_Abs_VariableList<SO_LevelScene>
+    public class SO_LevelScene_List : SO_Abs_Variable_List<SO_LevelScene>
     {
 
     }

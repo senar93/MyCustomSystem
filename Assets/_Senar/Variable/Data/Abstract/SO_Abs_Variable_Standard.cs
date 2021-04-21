@@ -9,7 +9,7 @@
 	/// variable with an initial default value
 	/// </summary>
 	/// <typeparam name="T">variable type</typeparam>
-	public abstract class SO_Abs_VariableStandard<T> : SO_Abs_VariableSimple<T>, ISerializationCallbackReceiver
+	public abstract class SO_Abs_Variable_Standard<T> : SO_Abs_Variable_Simple<T>, ISerializationCallbackReceiver
 	{
 		/// <summary>
 		/// the value that the variable takes as soon as the game start

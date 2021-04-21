@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(fileName = "PlayerPrefs_Float",
 					 menuName = "Senar/Global Variables/PlayerPrefs/float")]
-	public class SO_Float_VariablePlayerPrefs : SO_Abs_VariablePlayerPrefs<float>
+	public class SO_Float_PlayerPrefs : SO_Abs_Variable_PlayerPrefs<float>
 	{
 		protected override float GetValueFromPlayerPrefs()
 		{
@@ -15,7 +15,7 @@
 
 		protected override void SetValueToPlayerPrefs(float valueToSet)
 		{
-			PlayerPrefs.SetFloat(key, _value);
+			PlayerPrefs.SetFloat(key, valueToSet);
 		}
 	}
 }

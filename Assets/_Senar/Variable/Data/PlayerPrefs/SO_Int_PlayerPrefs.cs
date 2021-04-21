@@ -6,7 +6,7 @@
 
 	[CreateAssetMenu(fileName = "PlayerPrefs_Int",
 					 menuName = "Senar/Global Variables/PlayerPrefs/int")]
-	public class SO_Int_VariablePlayerPrefs : SO_Abs_VariablePlayerPrefs<int>
+	public class SO_Int_PlayerPrefs : SO_Abs_Variable_PlayerPrefs<int>
 	{
 		protected override int GetValueFromPlayerPrefs()
 		{
@@ -15,7 +15,7 @@
 
 		protected override void SetValueToPlayerPrefs(int valueToSet)
 		{
-			PlayerPrefs.SetInt(key, _value);
+			PlayerPrefs.SetInt(key, valueToSet);
 		}
 	}
 }
