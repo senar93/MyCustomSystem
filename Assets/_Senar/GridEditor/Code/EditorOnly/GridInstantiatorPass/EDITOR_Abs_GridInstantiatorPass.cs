@@ -8,7 +8,7 @@ namespace Senar.Grid.Editor
 
     public abstract class EDITOR_Abs_GridInstantiatorPass
     {
-        public abstract void Pass(MB_GenericGrid currentGrid);
+        public abstract void Pass(EDITOR_MB_GridInstantiator currentGridInstantiator);
     }
 }
 #endif

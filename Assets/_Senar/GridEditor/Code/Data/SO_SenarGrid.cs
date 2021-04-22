@@ -14,6 +14,6 @@
 	public class SO_SenarGrid : SerializedScriptableObject
     {
         [Space(20)]
-        public MB_GenericCell[,] grid;
+        public MB_Cell[,] grid;
     }
 }

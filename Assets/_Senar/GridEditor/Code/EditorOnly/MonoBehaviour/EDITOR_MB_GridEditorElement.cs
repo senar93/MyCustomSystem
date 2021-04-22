@@ -9,12 +9,12 @@
     /// monobehaviour compilato solo in editor; 
     /// contiene tutte le informazioni per permettere al grid editor di riconoscere una cella, non va usato mai fuori dal grid editor
     /// </summary>
-    [RequireComponent(typeof(MB_GenericCell))]
-    public class EDITOR_MB_Cell : MonoBehaviour
+    [RequireComponent(typeof(MB_Cell)), AddComponentMenu("Senar/Grid/_EDITOR ONLY/Grid Editor Element")]
+    public class EDITOR_MB_GridEditorElement : MonoBehaviour
     {
         #if UNITY_EDITOR
         [SerializeField, DisableInPlayMode, DisableIf("_cell")]
-        private MB_GenericCell _cell;
+        private MB_Cell _cell;
         
         public string EDITOR_typeName;
 
@@ -26,29 +26,29 @@
         /// <summary>
         /// puntatore alla cella
         /// </summary>
-        public MB_GenericCell EDITOR_cell
+        public MB_Cell EDITOR_cell
         {
             get 
             {
-                return _cell != null ? _cell : GetComponent<MB_GenericCell>(); 
+                return _cell != null ? _cell : GetComponent<MB_Cell>(); 
 			}
 		}
 
-        public void EDITOR_SetCell(MB_GenericCell cell)
+        public void EDITOR_SetCell(MB_Cell cell)
         {
             _cell = cell;
         }
 
 
-        public static EDITOR_MB_Cell[] EDITOR_allCellsType {
+        public static EDITOR_MB_GridEditorElement[] EDITOR_allCellsType {
             get {
-                return Resources.LoadAll<EDITOR_MB_Cell>("");
+                return Resources.LoadAll<EDITOR_MB_GridEditorElement>("");
             }
         }
 
-        public static EDITOR_MB_Cell[] EDITOR_loadableCellsType {
+        public static EDITOR_MB_GridEditorElement[] EDITOR_loadableCellsType {
             get {
-                List<EDITOR_MB_Cell> tmp = Resources.LoadAll<EDITOR_MB_Cell>("").ToList();
+                List<EDITOR_MB_GridEditorElement> tmp = Resources.LoadAll<EDITOR_MB_GridEditorElement>("").ToList();
                 tmp.RemoveAll(x => x.EDITOR_excludeFromGridEditor);
                 return tmp.ToArray();
             }

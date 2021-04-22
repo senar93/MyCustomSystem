@@ -25,16 +25,16 @@ namespace Senar.Grid.Editor
         public int height = 1;
 
         [FoldoutGroup("Cell Painter"), OnInspectorGUI("OnChange_FastDrawCell"), ValueDropdown("ValueDropdown_FastDrawCell"), SerializeField, AssetsOnly]
-        private EDITOR_MB_Cell _cellPainterCell;
-        protected static EDITOR_MB_Cell cellPainterCell = null;
+        private EDITOR_MB_GridEditorElement _cellPainterCell;
+        protected static EDITOR_MB_GridEditorElement cellPainterCell = null;
 
         [Space(30), TableMatrix(HorizontalTitle = "Grid", DrawElementMethod = "EDITOR_DrawGrid", ResizableColumns = false, SquareCells = false, RowHeight = 20), ShowIf("ShowIf_Grid"), OdinSerialize]
-        public EDITOR_MB_Cell[,] grid = new EDITOR_MB_Cell[0, 0];
+        public EDITOR_MB_GridEditorElement[,] grid = new EDITOR_MB_GridEditorElement[0, 0];
 
 
-        private static EDITOR_MB_Cell EDITOR_DrawGrid(Rect rect, EDITOR_MB_Cell value)
+        private static EDITOR_MB_GridEditorElement EDITOR_DrawGrid(Rect rect, EDITOR_MB_GridEditorElement value)
         {
-            List<EDITOR_MB_Cell> tmpCellsType = EDITOR_MB_Cell.EDITOR_loadableCellsType.ToList();
+            List<EDITOR_MB_GridEditorElement> tmpCellsType = EDITOR_MB_GridEditorElement.EDITOR_loadableCellsType.ToList();
 
             if (Event.current.type == EventType.MouseDown && rect.Contains(Event.current.mousePosition))
             {
@@ -85,14 +85,14 @@ namespace Senar.Grid.Editor
             width = targetGridAsset.grid != null ? targetGridAsset.grid.GetLength(0) : 0;
             height = targetGridAsset.grid != null ? targetGridAsset.grid.GetLength(1) : 0;
 
-            grid = new EDITOR_MB_Cell[width, height];
+            grid = new EDITOR_MB_GridEditorElement[width, height];
             if (targetGridAsset.grid != null)
             {
                 for (int x = 0; x < height; x++)
                 {
                     for (int y = 0; y < width; y++)
                     {
-                        grid[y, x] = targetGridAsset.grid[y, x]?.GetComponent<EDITOR_MB_Cell>();
+                        grid[y, x] = targetGridAsset.grid[y, x]?.GetComponent<EDITOR_MB_GridEditorElement>();
                     }
                 }
             }
@@ -103,7 +103,7 @@ namespace Senar.Grid.Editor
         [FoldoutGroup("Grid Size"), Button("Resize Grid", ButtonSizes.Medium), GUIColor(0.7f, 1f, 0.7f, 1f), PropertySpace(20)]
         public void ResizeGrid()
         {
-            EDITOR_MB_Cell[,] tmpGrid = new EDITOR_MB_Cell[width, height];
+            EDITOR_MB_GridEditorElement[,] tmpGrid = new EDITOR_MB_GridEditorElement[width, height];
 
             for (int x = 0; x < tmpGrid.GetLength(0); x++)
             {
@@ -145,7 +145,7 @@ namespace Senar.Grid.Editor
                 }
             }
 
-            targetGridAsset.grid = new MB_GenericCell[width, height];
+            targetGridAsset.grid = new MB_Cell[width, height];
             for(int x = 0; x < height; x++)
             {
                 for(int y = 0; y < width; y++)
@@ -176,9 +176,9 @@ namespace Senar.Grid.Editor
         #endregion
 
         #region VALUE DROPDOWN
-        public EDITOR_MB_Cell[] ValueDropdown_FastDrawCell()
+        public EDITOR_MB_GridEditorElement[] ValueDropdown_FastDrawCell()
         {
-            return EDITOR_MB_Cell.EDITOR_allCellsType;
+            return EDITOR_MB_GridEditorElement.EDITOR_allCellsType;
         }
 
         #endregion
