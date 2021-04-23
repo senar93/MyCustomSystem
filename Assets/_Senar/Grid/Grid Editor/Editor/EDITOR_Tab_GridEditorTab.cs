@@ -19,9 +19,9 @@ namespace Senar.Grid.Editor
         public SO_SenarGrid targetGridAsset;
         public string gridName = "NewGrid";
 
-        [FoldoutGroup("Grid Size"), PropertyRange(1, 30)]
+        [FoldoutGroup("Grid Size"), PropertyRange(1, "EDITOR_GetMaxWidht")]
         public int width = 1;
-        [FoldoutGroup("Grid Size"), PropertyRange(1, 30)]
+        [FoldoutGroup("Grid Size"), PropertyRange(1, "EDITOR_GetMaxHeight")]
         public int height = 1;
 
         [FoldoutGroup("Cell Painter"), OnInspectorGUI("OnChange_FastDrawCell"), ValueDropdown("ValueDropdown_FastDrawCell"), SerializeField, AssetsOnly]
@@ -137,11 +137,11 @@ namespace Senar.Grid.Editor
                 targetGridAsset = ScriptableObject.CreateInstance<SO_SenarGrid>();
                 if (Resources.LoadAll<SO_SenarGrid>("").ToList().Find(x => x.name == gridName) == null)
                 {
-                    AssetDatabase.CreateAsset(targetGridAsset, SingletonSO_GridEditorSettings.Instance.gridPath + gridName + ".asset");
+                    AssetDatabase.CreateAsset(targetGridAsset, EDITOR_SingletonSO_GridEditorSettings.Instance.gridPath + gridName + ".asset");
                 }
                 else
                 {
-                    AssetDatabase.CreateAsset(targetGridAsset, SingletonSO_GridEditorSettings.Instance.gridPath + "__" + Random.Range(0, int.MaxValue) + "__" + gridName + ".asset");
+                    AssetDatabase.CreateAsset(targetGridAsset, EDITOR_SingletonSO_GridEditorSettings.Instance.gridPath + "__" + Random.Range(0, int.MaxValue) + "__" + gridName + ".asset");
                 }
             }
 
@@ -183,6 +183,14 @@ namespace Senar.Grid.Editor
 
         #endregion
 
+        public int EDITOR_GetMaxHeight()
+        {
+            return EDITOR_SingletonSO_GridEditorSettings.Instance != null ? EDITOR_SingletonSO_GridEditorSettings.Instance.gridMaxHeight : 15;
+        }
+        public int EDITOR_GetMaxWidht()
+        {
+            return EDITOR_SingletonSO_GridEditorSettings.Instance != null ? EDITOR_SingletonSO_GridEditorSettings.Instance.gridMaxWidth : 15;
+        }
     }
 }
 #endif

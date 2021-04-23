@@ -9,8 +9,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-
-    [AddComponentMenu("Senar/Grid/Cell", 0)]
+	[AddComponentMenu("Senar/Grid/Cell", 0)]
     public class MB_Cell : MonoBehaviour
     {
         [ReadOnly]
@@ -19,6 +18,9 @@
         public MB_Grid grid;
 
         #if UNITY_EDITOR
+        public UltEvents.UltEvent<MB_Cell> EDITOR_OnInstantiateInCell = new UltEvents.UltEvent<MB_Cell>();
+
+
         [ShowIf("EDITOR_HaveCellEditorData"), DisableInPlayMode, Button("Add Cell Editor Data", ButtonSizes.Gigantic), GUIColor(0.7f, 1f, 0.7f)]
         private void EDITOR_AddCellEditorDataButton()
         {

@@ -6,7 +6,7 @@ namespace Senar.Grid.Editor
     using System.Collections.Generic;
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "CellDrawMode_", menuName = "Senar/Grid Editor/Cell Draw Mode", order = 1)]
+    [CreateAssetMenu(fileName = "CellDrawMode", menuName = "Senar/Grids Editor/Cell Draw Mode", order = 1)]
     public class EDITOR_SO_CellDrawMode : SerializedScriptableObject
     {
         [Required]

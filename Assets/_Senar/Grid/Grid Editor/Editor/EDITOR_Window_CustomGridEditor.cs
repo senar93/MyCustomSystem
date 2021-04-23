@@ -21,7 +21,7 @@ namespace Senar.Grid.Editor
             var tree = new OdinMenuTree();
             tree.Selection.SupportsMultiSelect = false;
 
-            tree.Add("Settings", SingletonSO_GridEditorSettings.Instance);
+            tree.Add("Settings", EDITOR_SingletonSO_GridEditorSettings.Instance);
 
             tree.Add("NEW GRID", new EDITOR_Tab_GridEditorTab());
 

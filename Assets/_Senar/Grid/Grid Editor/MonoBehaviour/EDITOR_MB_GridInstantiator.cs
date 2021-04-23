@@ -30,6 +30,8 @@
         [FoldoutGroup("Instantiation Parameters", expanded: false), SerializeField]
         private bool _flipY = false;
 
+        public UltEvents.UltEvent<MB_Grid> EDITOR_OnInstantiateInGrid = new UltEvents.UltEvent<MB_Grid>();
+
         [SerializeField]
         private List<EDITOR_Abs_GridInstantiatorPass> _extraPass = new List<EDITOR_Abs_GridInstantiatorPass>();
 
@@ -87,6 +89,7 @@
                     pass?.Pass(this);
                 }
             }
+            EDITOR_OnInstantiateInGrid?.Invoke(_grid);
 
             EditorUtility.SetDirty(this.gameObject);
             AssetDatabase.SaveAssets();
@@ -117,6 +120,7 @@
             tmp.name = "Cell [ " + x + " , " + y + " ]" + (extraText != "" ? (" - " + extraText)
                                                                            : "");
             EDITOR_grid.currentGrid[x, y] = tmpCell;
+            EDITOR_grid.currentGrid[x, y]?.EDITOR_OnInstantiateInCell.Invoke(EDITOR_grid.currentGrid[x, y]);
         }
 
         public void EDITOR_ImmediateDestroyChilds(Transform target)
